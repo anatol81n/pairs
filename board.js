@@ -22,16 +22,17 @@ export default class {
         const cardsCount = this.cardsNumberArray.length;
         const board = createTag('div', ["board"]);
         const rows = Math.floor(Math.sqrt(cardsCount));
-        const cols = cardsCount / rows;
+        const cols = Math.ceil(cardsCount / rows);
         shuffle(images);
-        for (let i = 0; i < rows; i++) {
+        for (let i = 0, numberIndex = 0; i < rows; i++) {
             const row = createTag("div", ["row"]);
             board.append(row);
-            for (let j = 0; j < cols; j++) {
-                const cardNumber = this.cardsNumberArray[i * rows + j];
+            for (let j = 0; j < cols && numberIndex < cardsCount; j++, numberIndex++) {
+                const cardNumber = this.cardsNumberArray[numberIndex];
                 const card = new AmazingCard(cardNumber, images[cardNumber], this.cardSelectHandler);
                 const col = card.create();
                 row.append(col);
+                console.log(numberIndex)
             }
         }
         return board;
