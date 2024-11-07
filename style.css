@@ -1,0 +1,57 @@
+#game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-control {
+  margin: 10px 20px;
+}
+.form-control h4, .form-control input {
+  margin: 0;
+  padding: 0;
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.col {
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+  border: 1px solid darkgoldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+
+.col img {
+  width: 90%;
+  height: 90%;
+}
+
+.open {
+  background-color: bisque;
+}
+
+.default-image {
+  background-image: url("./no-image.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.finish {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
