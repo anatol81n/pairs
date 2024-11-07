@@ -28,7 +28,7 @@ export default class {
             const row = createTag("div", ["row"]);
             board.append(row);
             for (let j = 0; j < cols; j++) {
-                const cardNumber = this.cardsNumberArray[i * cols + j];
+                const cardNumber = this.cardsNumberArray[i * rows + j];
                 const card = new AmazingCard(cardNumber, images[cardNumber], this.cardSelectHandler);
                 const col = card.create();
                 row.append(col);
